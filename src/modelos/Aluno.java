@@ -14,7 +14,7 @@ public class Aluno {
         this.pesoAluno = pesoAluno;
     }
     public void imprimirAluno(){
-        System.out.printf("Nome: %s\nIdade: %d\nAltura: %.2f\nPeso: %.2f\n", 
+        System.out.printf("Nome: %s\nIdade: %d anos\nAltura: %.2f M\nPeso: %.2f Kg\n", 
         this.nomeAluno, this.idadeAluno, this.alturaAluno, this.pesoAluno);
     }
 

@@ -39,7 +39,7 @@ public class CadastrarAluno {
             System.out.println("Alunos cadastrados:");
             for (int i = 0; i < this.indice; i++) {
                 this.alunos[i].imprimirAluno();
-                System.out.println();
+                System.out.println("-----------------");
             }
         }
     }
