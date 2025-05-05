@@ -1,23 +1,31 @@
 package modelos;
 
 public class Aluno {
+    private String cpfAluno;
     private String nomeAluno;
     private int idadeAluno;
     private float alturaAluno;
     private float pesoAluno;
 
     // Construtor
-    public Aluno(String nomeAluno, int idadeAluno, float alturaAluno, float pesoAluno) {
+    public Aluno(String cpfAluno, String nomeAluno, int idadeAluno, float alturaAluno, float pesoAluno) {
+        this.cpfAluno = cpfAluno;
         this.nomeAluno = nomeAluno;
         this.idadeAluno = idadeAluno;
         this.alturaAluno = alturaAluno;
         this.pesoAluno = pesoAluno;
     }
     public void imprimirAluno(){
-        System.out.printf("Nome: %s\nIdade: %d anos\nAltura: %.2f M\nPeso: %.2f Kg\n", 
-        this.nomeAluno, this.idadeAluno, this.alturaAluno, this.pesoAluno);
+        System.out.printf("CPF: %s\nNome: %s\nIdade: %d anos\nAltura: %.2f M\nPeso: %.2f Kg\n", 
+                          this.cpfAluno, this.nomeAluno, this.idadeAluno, this.alturaAluno, this.pesoAluno);
     }
-
+    
+    public String getCpfAluno() {
+        return this.cpfAluno;
+    }
+    public void setCpfAluno(String cpfAluno) {
+        this.cpfAluno = cpfAluno;
+    }
     public String getNomeAluno() {
         return this.nomeAluno;
     }

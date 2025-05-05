@@ -1,7 +1,7 @@
 package modelos;
 
 public class Equipamento {
-    String nomeEquipamento;
-    int quantidadeEquipamento;
-    float valorEquipamento;
+    private String nomeEquipamento;
+    private int quantidadeEquipamento;
+    private float valorEquipamento;
 }
