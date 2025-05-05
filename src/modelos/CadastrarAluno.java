@@ -9,7 +9,7 @@ public class CadastrarAluno {
         this.alunos = new Aluno[maxAlunos];
     }
 
-    public void cadastrarAluno(Aluno aluno) {
+    public void cadastrarAluno() {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Digite o nome do aluno: ");
