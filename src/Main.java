@@ -10,5 +10,7 @@ public class Main {
         CadastrarAluno cadAluno = new CadastrarAluno(novosAlunos);
         cadAluno.cadastrarAluno();
         cadAluno.imprimirAlunos();
+
+        sc.close();
     }
 }
