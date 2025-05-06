@@ -12,15 +12,15 @@ public class GerenciadorProfessor {
     }
 
     public void cadastrarProfessor(Scanner sc) {
-        System.out.println("Digite o CPF do professor: ");
+        System.out.print("Digite o CPF do professor: ");
         String cpfProfessor = sc.nextLine();
-        System.out.println("Digite o nome do professor: ");
+        System.out.print("Digite o nome do professor: ");
         String nomeProfessor = sc.nextLine();
-        System.out.println("Digite a idade do professor: ");
+        System.out.print("Digite a idade do professor: ");
         int idadeProfessor = sc.nextInt();
-        System.out.println("Digite a altura do professor: ");
+        System.out.print("Digite a altura do professor: ");
         float alturaProfessor = sc.nextFloat();
-        System.out.println("Digite o peso do professor: ");
+        System.out.print("Digite o peso do professor: ");
         float pesoProfessor = sc.nextFloat();
 
         // Limpar buffer
@@ -30,6 +30,7 @@ public class GerenciadorProfessor {
         this.professores[this.indice] = p;
         this.indice++;
         System.out.println("Professor cadastrado com sucesso!");
+        System.out.println("-".repeat(30)); // Função .repeat() só funciona a partir do Java 11
     }
 
     public void imprimirProfessores() {
@@ -39,7 +40,7 @@ public class GerenciadorProfessor {
             System.out.println("Professores cadastrados:");
             for (int i = 0; i < this.indice; i++) {
                 this.professores[i].imprimirProfessor();
-                System.out.println("-----------------");
+                System.out.println("-".repeat(30));  // Função .repeat() só funciona a partir do Java 11
             }
         }
     }

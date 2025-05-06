@@ -30,7 +30,7 @@ public class GerenciadorAluno {
         this.alunos[this.indice] = a;
         this.indice++;
         System.out.println("Aluno cadastrado com sucesso!");
-        System.out.println("-".repeat(30));
+        System.out.println("-".repeat(30));  // Função .repeat() só funciona a partir do Java 11
 
     }
     public void imprimirAlunos() {
@@ -40,9 +40,8 @@ public class GerenciadorAluno {
             System.out.println("Alunos cadastrados:");
             for (int i = 0; i < this.indice; i++) {
                 this.alunos[i].imprimirAluno();
-                System.out.println("-".repeat(30));
+                System.out.println("-".repeat(30)); // Função .repeat() só funciona a partir do Java 11
             }
         }
-        System.out.println("Pressione Enter para continuar.");
     }
 }
