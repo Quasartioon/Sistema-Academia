@@ -2,7 +2,6 @@ package services;
 
 import java.util.Scanner;
 import modelos.Professor;
-
 public class GerenciadorProfessor {
     private Professor[] professores;
     private int indice = 0;
@@ -13,20 +12,18 @@ public class GerenciadorProfessor {
 
     public void cadastrarProfessor(Scanner sc) {
         System.out.print("Digite o CPF do professor: ");
-        String cpfProfessor = sc.nextLine();
+        String cpf = sc.nextLine();
         System.out.print("Digite o nome do professor: ");
-        String nomeProfessor = sc.nextLine();
+        String nome = sc.nextLine();
         System.out.print("Digite a idade do professor: ");
-        int idadeProfessor = sc.nextInt();
-        System.out.print("Digite a altura do professor: ");
-        float alturaProfessor = sc.nextFloat();
-        System.out.print("Digite o peso do professor: ");
-        float pesoProfessor = sc.nextFloat();
+        int idade = sc.nextInt();
+        System.out.print("Digite o salário do professor: ");
+        double salario = sc.nextDouble();
+        System.out.print("Digite a especialidade do professor: ");
+        String especialidade = sc.nextLine();
 
-        // Limpar buffer
-        sc.nextLine();
 
-        Professor p = new Professor(cpfProfessor,nomeProfessor, idadeProfessor, alturaProfessor, pesoProfessor);
+        Professor p = new Professor(cpf, nome, idade, salario, especialidade);
         this.professores[this.indice] = p;
         this.indice++;
         System.out.println("Professor cadastrado com sucesso!");
@@ -39,7 +36,7 @@ public class GerenciadorProfessor {
         }else{
             System.out.println("Professores cadastrados:");
             for (int i = 0; i < this.indice; i++) {
-                this.professores[i].imprimirProfessor();
+                this.professores[i].imprimirPessoa();
                 System.out.println("-".repeat(30));  // Função .repeat() só funciona a partir do Java 11
             }
         }

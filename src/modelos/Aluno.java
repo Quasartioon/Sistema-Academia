@@ -1,43 +1,19 @@
 package modelos;
-
-public class Aluno {
-    private String cpfAluno;
-    private String nomeAluno;
-    private int idadeAluno;
+public class Aluno extends Pessoa{
     private float alturaAluno;
     private float pesoAluno;
 
     // Construtor
-    public Aluno(String cpfAluno, String nomeAluno, int idadeAluno, float alturaAluno, float pesoAluno) {
-        this.cpfAluno = cpfAluno;
-        this.nomeAluno = nomeAluno;
-        this.idadeAluno = idadeAluno;
+    public Aluno(String cpf, String nome, int idade, float alturaAluno, float pesoAluno) {
+        super(cpf, nome, idade);
         this.alturaAluno = alturaAluno;
         this.pesoAluno = pesoAluno;
     }
     public void imprimirAluno(){
-        System.out.printf("CPF: %s\nNome: %s\nIdade: %d anos\nAltura: %.2f M\nPeso: %.2f Kg\n", 
-                          this.cpfAluno, this.nomeAluno, this.idadeAluno, this.alturaAluno, this.pesoAluno);
+        System.out.printf("Altura: %.2f M\nPeso: %.2f Kg\n", 
+                          this.alturaAluno, this.pesoAluno);
     }
     
-    public String getCpfAluno() {
-        return this.cpfAluno;
-    }
-    public void setCpfAluno(String cpfAluno) {
-        this.cpfAluno = cpfAluno;
-    }
-    public String getNomeAluno() {
-        return this.nomeAluno;
-    }
-    public void setNomeAluno(String nomeAluno) {
-        this.nomeAluno = nomeAluno;
-    }
-    public int getIdadeAluno() {
-        return this.idadeAluno;
-    }
-    public void setIdadeAluno(int idadeAluno) {
-        this.idadeAluno = idadeAluno;
-    }
     public float getAlturaAluno() {
         return this.alturaAluno;
     }
@@ -49,5 +25,12 @@ public class Aluno {
     }
     public void setPesoAluno(float pesoAluno) {
         this.pesoAluno = pesoAluno;
+    }
+
+    @Override
+    public void imprimirPessoa() {
+        super.imprimirPessoa();
+        System.out.printf("Altura: %.2f M\nPeso: %.2f Kg\n", 
+                          this.alturaAluno, this.pesoAluno);
     }
 }

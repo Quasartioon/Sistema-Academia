@@ -1,21 +1,41 @@
 package modelos;
 
 public class Pessoa {
-    protected String cpfPessoa;
-    protected String nomePessoa;
-    protected int idadePessoa;
-    protected float alturaPessoa;
-    protected float pesoPessoa;
+    protected String cpf;
+    protected String nome;
+    protected int idade;
 
-    public Pessoa(String nomePessoa, String cpfPessoa, int idadePessoa, float alturaPessoa, float pesoPessoa) {
-        this.cpfPessoa = cpfPessoa;
-        this.nomePessoa = nomePessoa;
-        this.idadePessoa = idadePessoa;
-        this.alturaPessoa = alturaPessoa;
-        this.pesoPessoa = pesoPessoa;
+    public Pessoa(String cpf, String nome, int idade) {
+        this.cpf = cpf;
+        this.nome = nome;
+        this.idade = idade;
     }
     public void imprimirPessoa() {
-        System.out.printf("CPF: %s\nNome: %s\nIdade: %d anos\nAltura: %.2f M\nPeso: %.2f Kg\n", 
-                          this.cpfPessoa, this.nomePessoa, this.idadePessoa, this.alturaPessoa, this.pesoPessoa);
+        System.out.printf("CPF: %s\nNome: %s\nIdade: %d anos\n", 
+                         this.cpf, this.nome, this.idade);
+    }
+
+    public String getCpf() {
+        return this.cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getNome() {
+        return this.nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getIdade() {
+        return this.idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
     }
 }

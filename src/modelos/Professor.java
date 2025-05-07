@@ -1,63 +1,31 @@
 package modelos;
-
-public class Professor {
-    private String cpfProfessor;
-    private String nomeProfessor;
-    private int idadeProfessor;
-    private float alturaProfessor;
-    private float pesoProfessor;
+public class Professor extends Pessoa{
+    private double salario;
+    private String especialidade;
 
     // Constructor
-    public Professor(String cpfProfessor, String nomeProfessor, int idadeProfessor, float alturaProfessor, float pesoProfessor) {
-        this.cpfProfessor = cpfProfessor;
-        this.nomeProfessor = nomeProfessor;
-        this.idadeProfessor = idadeProfessor;
-        this.alturaProfessor = alturaProfessor;
-        this.pesoProfessor = pesoProfessor;
-        
+    public Professor(String cpf, String nome, int idade, double salario, String especialidade){
+        super(cpf, nome, idade);
+        this.salario = salario;
+        this.especialidade = especialidade;
+    }
+    @Override
+    public void imprimirPessoa() {
+        super.imprimirPessoa();
+        System.out.printf("Salario: %.2f\nEspecialidade: %s\n", 
+                         this.salario, this.especialidade);
     }
 
-    public void imprimirProfessor() {
-        System.out.printf("CPF: %s\nNome: %s\nIdade: %d anos\nAltura: %.2f M\nPeso: %.2f Kg\n", 
-                          this.cpfProfessor, this.nomeProfessor, this.idadeProfessor, this.alturaProfessor, this.pesoProfessor);
+    public String getEspecialidade(){
+        return this.especialidade;
     }
-
-    public String getCpfProfessor() {
-        return this.cpfProfessor;
+    public void setEspecialidade(String especialidade){
+        this.especialidade = especialidade;
     }
-
-    public void setCpfProfessor(String cpfProfessor) {
-        this.cpfProfessor = cpfProfessor;
+    public double getSalario(){
+        return this.salario;
     }
-    public String getNomeProfessor() {
-        return this.nomeProfessor;
-    }
-
-    public void setNomeProfessor(String nomeProfessor) {
-        this.nomeProfessor = nomeProfessor;
-    }
-
-    public int getIdadeProfessor() {
-        return this.idadeProfessor;
-    }
-
-    public void setIdadeProfessor(int idadeProfessor) {
-        this.idadeProfessor = idadeProfessor;
-    }
-
-    public float getAlturaProfessor() {
-        return this.alturaProfessor;
-    }        
-
-    public void setAlturaProfessor(float alturaProfessor) {
-        this.alturaProfessor = alturaProfessor;
-    }
-
-    public float getPesoProfessor() {
-        return this.pesoProfessor;
-    }
-
-    public void setPesoProfessor(float pesoProfessor) {
-        this.pesoProfessor = pesoProfessor;
+    public void setSalario(double salario){
+        this.salario = salario;
     }
 }
