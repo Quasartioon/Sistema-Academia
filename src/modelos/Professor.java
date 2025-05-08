@@ -1,31 +1,25 @@
 package modelos;
-public class Professor extends Pessoa{
-    private double salario;
+public class Professor extends Funcionario{
     private String especialidade;
 
     // Constructor
-    public Professor(String cpf, String nome, int idade, double salario, String especialidade){
-        super(cpf, nome, idade);
-        this.salario = salario;
+    public Professor(String cpf, String nome, int idade, double salario, int cargaHoraria, String cargo, String especialidade) {
+        super(cpf, nome, idade, salario, cargaHoraria, cargo);
         this.especialidade = especialidade;
     }
+
     @Override
     public void imprimirPessoa() {
         super.imprimirPessoa();
-        System.out.printf("Salario: %.2f\nEspecialidade: %s\n", 
-                         this.salario, this.especialidade);
+        System.out.printf("Especialidade: %s\n", 
+                         this.especialidade);
     }
 
-    public String getEspecialidade(){
+    public String getEspecialidade() {
         return this.especialidade;
     }
-    public void setEspecialidade(String especialidade){
+
+    public void setEspecialidade(String especialidade) {
         this.especialidade = especialidade;
-    }
-    public double getSalario(){
-        return this.salario;
-    }
-    public void setSalario(double salario){
-        this.salario = salario;
     }
 }

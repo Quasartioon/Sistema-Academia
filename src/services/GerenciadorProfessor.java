@@ -19,11 +19,17 @@ public class GerenciadorProfessor {
         int idade = sc.nextInt();
         System.out.print("Digite o salário do professor: ");
         double salario = sc.nextDouble();
+        System.out.print("Digite a carga horária do professor: ");
+        int cargaHoraria = sc.nextInt();
+
+        sc.nextLine();
+
+        System.out.print("Digite o cargo do professor: ");
+        String cargo = sc.nextLine();
         System.out.print("Digite a especialidade do professor: ");
         String especialidade = sc.nextLine();
 
-
-        Professor p = new Professor(cpf, nome, idade, salario, especialidade);
+        Professor p = new Professor(cpf, nome, idade, salario, cargaHoraria, cargo, especialidade);
         this.professores[this.indice] = p;
         this.indice++;
         System.out.println("Professor cadastrado com sucesso!");

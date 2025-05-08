@@ -17,6 +17,10 @@ public class Equipamento {
         System.out.printf("%-20s | %-15d | R$ %-17.2f | R$ %-10.2f\n", 
                           this.nomeEquipamento, this.quantidadeEquipamento, this.valorEquipamento, this.valorTotalEquipamento);
     }
+    public void imprimirNomeEquipamento(){
+        System.out.printf("Nome do equipamento: ",
+                         this.nomeEquipamento);
+    }
 
     public String getNomeEquipamento() {
         return nomeEquipamento;

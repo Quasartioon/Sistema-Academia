@@ -9,10 +9,7 @@ public class Main {
         int opcao = 0;
         while (opcao != 4) {
             System.out.println("Escolha uma opção:");
-            System.out.println("1 - Cadastrar alunos");
-            System.out.println("2 - Cadastrar professores");
-            System.out.println("3 - Cadastrar equipamentos");
-            System.out.println("4 - Sair");
+            System.out.printf("1 - Cadastrar alunos\n2 - Cadastrar professores\n3 - Cadastrar equipamentos\n4 - Sair\n");
             opcao = sc.nextInt();
 
             sc.nextLine();
