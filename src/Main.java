@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import services.GerenciadorAluno;
 import services.GerenciadorEquipamento;
-import services.GerenciadorProfessor;
+import services.GerenciadorFuncionarios;
 public class Main {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
@@ -18,7 +18,7 @@ public class Main {
                     GerenciadorAluno cadAluno = criarAluno(sc);
                     break;
                 case 2:
-                    GerenciadorProfessor cadProfessor = criarProfessor(sc);
+                    GerenciadorFuncionarios cadProfessor = criarProfessor(sc);
                     break;
                 case 3:
                     GerenciadorEquipamento cadEquipamento = criarEquipamento(sc);
@@ -34,6 +34,17 @@ public class Main {
         sc.close();
     }
 
+    public static GerenciadorFuncionarios criarProfessor(Scanner sc) {
+        System.out.println("Quantos funcionarios a ser cadastrado?");
+        int novosFuncionarios = sc.nextInt();
+        sc.nextLine(); //limpar buffer
+        GerenciadorFuncionarios cadProfessor = new GerenciadorFuncionarios();
+        for(int i= 0; i< novosFuncionarios; i++) {
+            cadProfessor.cadastrarProfessor(sc);
+        }
+        cadProfessor.listarProfessores();
+        return cadProfessor;
+    }
     public static GerenciadorAluno criarAluno(Scanner sc) {
         System.out.println("Quantos alunos a ser cadastrado?");
         int novosAlunos = sc.nextInt();
@@ -45,17 +56,7 @@ public class Main {
         cadAluno.imprimirAlunos();
         return cadAluno;
     }
-    public static GerenciadorProfessor criarProfessor(Scanner sc) {
-        System.out.println("Quantos professores a ser cadastrado?");
-        int novosProfessores = sc.nextInt();
-        sc.nextLine(); //limpar buffer
-        GerenciadorProfessor cadProfessor = new GerenciadorProfessor(novosProfessores);
-        for(int i= 0; i< novosProfessores; i++) {
-            cadProfessor.cadastrarProfessor(sc);
-        }
-        cadProfessor.imprimirProfessores();
-        return cadProfessor;
-    }
+
     public static GerenciadorEquipamento criarEquipamento(Scanner sc) {
         System.out.println("Quantos equipamentos a ser cadastrado?");
         int novosEquipamentos = sc.nextInt();

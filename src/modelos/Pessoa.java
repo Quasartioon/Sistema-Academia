@@ -20,7 +20,11 @@ public class Pessoa {
     }
 
     public void setCpf(String cpf) {
-        this.cpf = cpf;
+        if (cpf != null && !cpf.trim().isEmpty()){
+            this.cpf = cpf;
+        } else{
+            System.out.println("O CPF deve ser preenchido!");
+        }
     }
 
     public String getNome() {
@@ -28,7 +32,11 @@ public class Pessoa {
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        if(nome != null && !nome.trim().isEmpty()){
+            this.nome = nome;
+        } else{
+            System.out.println("O nome deve ser preenchido!");
+        }
     }
 
     public int getIdade() {
@@ -36,6 +44,11 @@ public class Pessoa {
     }
 
     public void setIdade(int idade) {
-        this.idade = idade;
+        if(idade > 0){
+            this.idade = idade;
+        } else{
+            System.out.println("A idade deve ser maior que zero!");
+            return;
+        }
     }
 }

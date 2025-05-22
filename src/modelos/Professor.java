@@ -20,6 +20,11 @@ public class Professor extends Funcionario{
     }
 
     public void setEspecialidade(String especialidade) {
-        this.especialidade = especialidade;
+        if (especialidade == null || especialidade.trim().isEmpty()) {
+            System.out.println("specialidade não informada. Será definido como 'Indefinido'.");
+            this.especialidade = "Indefinido";
+        } else {
+            this.especialidade = especialidade;
+        }
     }
 }

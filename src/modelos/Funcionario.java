@@ -22,7 +22,14 @@ public class Funcionario extends Pessoa{
     }
 
     public void setSalario(double salario) {
-        this.salario = salario;
+        if (salario > 1000){
+            this.salario = salario;
+        } else if (salario > 0) {
+            System.out.println("O salário é um valor muito baixo, tem certeza?");
+        } else {
+            System.out.println("O salário deve ser maior que zero!");
+            return;
+        }
     }
 
     public int getCargaHoraria() {
