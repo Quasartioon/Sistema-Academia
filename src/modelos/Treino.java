@@ -1,7 +1,11 @@
 package modelos;
+
+import java.util.ArrayList;
+import java.util.List;
 public class Treino extends Aula{
     private String tipoTreino;
     private int duracaoTreino;
+    private List<Equipamento> equipamentosNecessarios = new ArrayList<>();
 
     public Treino(int hora, String data, String tipoTreino, int duracaoTreino) {
         super(hora, data);
@@ -9,12 +13,24 @@ public class Treino extends Aula{
         this.duracaoTreino = duracaoTreino;
     }
 
+    public void adicionarEquipamento(Equipamento equipamento) {
+        this.equipamentosNecessarios.add(equipamento);
+    }
+
+    public void removerEquipamento(Equipamento equipamento) {
+        this.equipamentosNecessarios.remove(equipamento);
+    }
+
+    public List<Equipamento> getEquipamentosNecessarios() {
+        return this.equipamentosNecessarios;
+    }
+
     public void imprimirTreino(){
         super.imprimirAula();
         System.out.printf("Duração do treino: %d\nTipo de treino: %s",
                          this.duracaoTreino, this.tipoTreino);
     }
-
+    
     public String getTipoTreino() {
         return this.tipoTreino;
     }

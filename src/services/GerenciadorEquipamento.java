@@ -37,4 +37,8 @@ public class GerenciadorEquipamento {
         }
         System.out.println("-".repeat(80)); // Função .repeat() funciona a partir do Java 11
     }
+
+    public Equipamento getEquipamento(int indice) throws IndexOutOfBoundsException {
+        return this.lista.get(indice);
+    }
 }
