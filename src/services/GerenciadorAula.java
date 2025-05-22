@@ -18,8 +18,7 @@ public class GerenciadorAula {
         String data = sc.nextLine();
     
         System.out.print("Digite a hora: ");
-        int hora = sc.nextInt();
-        sc.nextLine(); // Limpar buffer
+        String hora = sc.nextLine();
 
         if (isTreino) {
             System.out.print("Tipo do treino: ");
@@ -44,9 +43,9 @@ public class GerenciadorAula {
         if (aulas.isEmpty()) {
             System.out.println("Nenhuma aula/treino agendado.");
         } else {
-            System.out.println("Aulas/Treinos agendados:");
+            System.out.println("\n-AULAS/TREINOS AGENDADOS-");
             for (int i = 0; i < aulas.size(); i++) {
-                System.out.print(i + " - ");
+                System.out.println("ÍNDICE "+ i + ": ");
                 if (aulas.get(i) instanceof Treino) {
                     ((Treino) aulas.get(i)).imprimirTreino();
                 } else {
@@ -82,7 +81,7 @@ public class GerenciadorAula {
         System.out.print("Nova hora (" + aula.getHora() + "): ");
         String novaHoraStr = sc.nextLine();
         if (!novaHoraStr.isEmpty()) {
-            aula.setHora(Integer.parseInt(novaHoraStr));
+            aula.setHora(novaHoraStr);
         }
         System.out.println("Aula atualizada com sucesso!");
     }
@@ -130,5 +129,23 @@ public class GerenciadorAula {
             System.out.println("Índice inválido ou não é um treino!");
         }
         System.out.println("-".repeat(30));
+    }
+    public void verEquipamentosDoTreino(Scanner sc) {
+        listarAulas();
+        System.out.print("Digite o índice do treino: ");
+        int indice = sc.nextInt();
+        sc.nextLine();
+    
+        if (indice >= 0 && indice < aulas.size() && 
+            aulas.get(indice) instanceof Treino) {
+        
+            Treino treino = (Treino) aulas.get(indice);
+            System.out.println("Equipamentos para este treino:");
+            for (Equipamento equip : treino.getEquipamentosNecessarios()) {
+                equip.imprimirEquipamento();
+            }
+        } else {
+            System.out.println("Índice inválido ou não é um treino!");
+        }
     }
 }

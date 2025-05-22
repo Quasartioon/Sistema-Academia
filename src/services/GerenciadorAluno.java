@@ -1,13 +1,13 @@
 package services;
-
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import modelos.Aluno;
 public class GerenciadorAluno {
-    private Aluno[] alunos;
-    private int indice = 0;
+    private List<Aluno> alunosList = new ArrayList<>();
 
-    public GerenciadorAluno(int maxAlunos) {
-        this.alunos = new Aluno[maxAlunos];
+    public GerenciadorAluno() {
+        this.alunosList = new ArrayList<>();
     }
 
     public void cadastrarAluno(Scanner sc) {
@@ -26,21 +26,17 @@ public class GerenciadorAluno {
         sc.nextLine();
 
         Aluno a = new Aluno(cpf,nome, idade, alturaAluno, pesoAluno);
-        this.alunos[this.indice] = a;
-        this.indice++;
+        this.alunosList.add(a);
         System.out.println("Aluno cadastrado com sucesso!");
         System.out.println("-".repeat(30));  // Função .repeat() só funciona a partir do Java 11
 
     }
-    public void imprimirAlunos() {
-        if (this.indice == 0) {
-            System.out.println("Nenhum aluno cadastrado.");
-        }else{
-            System.out.println("Alunos cadastrados:");
-            for (int i = 0; i < this.indice; i++) {
-                this.alunos[i].imprimirPessoa();
-                System.out.println("-".repeat(30)); // Função .repeat() só funciona a partir do Java 11
-            }
+    public List<Aluno> listarAlunos() {
+        System.out.println("\nALUNOS CADASTRADOS: ");
+        for(Aluno a : this.alunosList) {
+            a.imprimirPessoa();
+            System.out.println("-".repeat(30));  
         }
+        return this.alunosList;
     }
 }

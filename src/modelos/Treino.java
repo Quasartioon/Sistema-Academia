@@ -7,7 +7,7 @@ public class Treino extends Aula{
     private int duracaoTreino;
     private List<Equipamento> equipamentosNecessarios = new ArrayList<>();
 
-    public Treino(int hora, String data, String tipoTreino, int duracaoTreino) {
+    public Treino(String hora, String data, String tipoTreino, int duracaoTreino) {
         super(hora, data);
         this.tipoTreino = tipoTreino;
         this.duracaoTreino = duracaoTreino;
@@ -27,7 +27,7 @@ public class Treino extends Aula{
 
     public void imprimirTreino(){
         super.imprimirAula();
-        System.out.printf("Duração do treino: %d\nTipo de treino: %s",
+        System.out.printf("\nDuração do treino: %d\nTipo de treino: %s",
                          this.duracaoTreino, this.tipoTreino);
     }
     

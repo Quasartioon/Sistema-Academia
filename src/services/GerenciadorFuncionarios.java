@@ -40,6 +40,7 @@ public class GerenciadorFuncionarios {
         System.out.println("-".repeat(30));  
     }
     public List<Professor> listarProfessores() {
+        System.out.println("\nPROFESSORES CADASTRADOS: ");
         for(Professor p : this.professores) {
             p.imprimirPessoa();
             System.out.println("-".repeat(30));  
@@ -49,15 +50,15 @@ public class GerenciadorFuncionarios {
 
     //Métodos Recepcionista:
     public void cadastrarRecepcionista(Scanner sc) {
-        System.out.print("Digite o CPF do professor: ");
+        System.out.print("Digite o CPF do recepcionista: ");
         String cpf = sc.nextLine();
-        System.out.print("Digite o nome do professor: ");
+        System.out.print("Digite o nome do recepcionista: ");
         String nome = sc.nextLine();
-        System.out.print("Digite a idade do professor: ");
+        System.out.print("Digite a idade do recepcionista: ");
         int idade = sc.nextInt();
-        System.out.print("Digite o salário do professor: ");
+        System.out.print("Digite o salário do recepcionista: ");
         double salario = sc.nextDouble();
-        System.out.print("Digite a carga horária do professor: ");
+        System.out.print("Digite a carga horária do recepcionista: ");
         int cargaHoraria = sc.nextInt();
         System.out.print("Qual o código do recepcionista: ");
         int codAtendimento = sc.nextInt();

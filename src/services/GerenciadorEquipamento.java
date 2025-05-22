@@ -29,6 +29,7 @@ public class GerenciadorEquipamento {
             System.out.println("Nenhum equipamento cadastrado.");
         }else{
             // Cabeçalho
+            System.out.println("\n");
             System.out.printf("%-20s | %-15s | %-20s | %-20s\n", "Equipamento", "Quantidade", "Valor por unidade", "Valor Total");
             System.out.println("-".repeat(80)); // Função .repeat() funciona a partir do Java 11
             for (Equipamento eq : this.lista) {

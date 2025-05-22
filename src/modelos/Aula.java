@@ -1,23 +1,23 @@
 package modelos;
 
 public class Aula {
-    protected int hora;
+    protected String hora;
     protected String data;
 
-    public Aula(int hora, String data) {
+    public Aula(String hora, String data) {
         this.hora = hora;
         this.data = data;
     }
 
     public void imprimirAula(){
-        System.out.printf("Hora da aula:\n Data da aula: \n",
+        System.out.printf("Hora da aula: %s\nData da aula: %s",
                             this.hora, this.data);
     }
 
-    public int getHora() {
+    public String getHora() {
         return hora;
     }
-    public void setHora(int hora) {
+    public void setHora(String hora) {
         this.hora = hora;
     }
     public String getData() {
