@@ -82,6 +82,7 @@ public class Main {
     }
      public static void menuFuncionarios(Scanner sc, GerenciadorFuncionarios gerenciador) {
         int opcao;
+        char escolha;
         do {
             System.out.println("\nGERENCIAMENTO DE FUNCIONÁRIOS");
             System.out.println("1 - Cadastrar novo funcionário");
@@ -94,15 +95,44 @@ public class Main {
             
             switch (opcao) {
                 case 1:
-                    System.out.print("Quantos funcionários deseja cadastrar? ");
-                    int quantidade = sc.nextInt();
-                    sc.nextLine();
-                    for (int i = 0; i < quantidade; i++) {
-                        gerenciador.cadastrarProfessor(sc);
-                    }
+                    do { 
+                        System.out.println("Deseja cadastrar um gerente? (S/N)");
+                        escolha = sc.nextLine().toUpperCase().charAt(0);
+    
+                        if(escolha == 'S'){
+                            System.out.print("Digite quantos gerentes a serem cadastrado: ");
+                            int quantidade = sc.nextInt();
+                            sc.nextLine();
+                            for (int i = 0; i < quantidade; i++) {
+                                gerenciador.cadastrarGerente(sc);
+                            }                        
+                        } else if (escolha == 'N'){
+                            System.out.print("Digite quantos professores a serem cadastrado: ");
+                            int quantidade = sc.nextInt();
+                            sc.nextLine();
+                            for (int i = 0; i < quantidade; i++) {
+                                gerenciador.cadastrarProfessor(sc);
+                            }
+                        } else {
+                            System.out.println("Escolha inválida");
+                        }
+                    } while (escolha != 'S' && escolha != 'N');
+                    
                     break;
                 case 2:
-                    gerenciador.listarProfessores();
+                    do{
+                        System.out.print("Digite qual lista deseja visualizar (G = Gernetes; P = Professores): ");
+                        escolha = sc.nextLine().toUpperCase().charAt(0);
+
+                        if(escolha == 'G'){
+                            gerenciador.listarGerentes();
+                        } else if(escolha == 'P'){
+                            gerenciador.listarProfessores();
+                        } else {
+                            System.out.println("ENTRADA INVÁLIDA!");
+                        }
+                    }while(escolha != 'G' && escolha != 'P');
+
                     break;
                 case 3:
                     break;
