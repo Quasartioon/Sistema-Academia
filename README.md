@@ -1,18 +1,41 @@
-## Getting Started
+# Sistema CRUD básico para gerenciamento financeiro para uma academia
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+# Status
+Finalizado.
 
-## Folder Structure
+## Sobre o projeto
 
-The workspace contains two folders by default, where:
+Este projeto consiste em um sistema CRUD básico voltado para o gerenciamento financeiro de uma academia.  
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+A aplicação permite realizar operações essenciais de controle de dados, como cadastro, consulta, atualização e remoção de informações financeiras, simulando um cenário real de gestão.  
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## Objetivo
+O principal objetivo do projeto é aplicar e consolidar conceitos de programação orientada a objetos (POO) utilizando Java, incluindo:
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+* Encapsulamento
+* Abstração
+* Herança
+* Polimorfismo
 
-## Dependency Management
+Além disso, busca exercitar a organização de código e separação de responsabilidades.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Funcionalidades
+* Cadastro de registros financeiros
+* Visualização de dados
+* Atualização de informações
+* Remoção de registros
+
+## Conceito de CRUD
+
+CRUD é a sigla para:
+
+* Create → Criar dados
+* Read → Ler/exibir dados
+* Update → Atualizar dados
+* Delete → Remover dados
+
+Essas operações formam a base de qualquer sistema de gerenciamento.
+
+## Tecnologias utilizadas
+* Java - JDK 17
+* Visual Studio Code (IDE)
